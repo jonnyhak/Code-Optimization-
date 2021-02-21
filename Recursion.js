@@ -111,12 +111,51 @@ function flatten(arr){
 // console.log(flatten([[1],[2],[3]])) // [1,2,3]
 // console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])) // [1,2,3]
 
-function capitalizeFirst (arr) {
-  // add whatever parameters you deem necessary - good luck!
+// function capitalizeFirst (arr) {
+//   // add whatever parameters you deem necessary - good luck!
 //   if (arr.length === 1) {
-      return [arr[0][0].toUpperCase() + arr[0].slice(1)]
+//       return [arr[0][0].toUpperCase() + arr[0].slice(1)]
 //   }
+
+
+// }
+
+// console.log(capitalizeFirst(['car','taco','banana'])); // ['Car','Taco','Banana']
+
+function stringifyNumbers(obj){
+    let newObj = {}
 
 }
 
-console.log(capitalizeFirst(['car','taco','banana'])); // ['Car','Taco','Banana']
+function collectStrings(obj){
+    let strings = []
+
+    for (var key in obj) {
+        if (typeof obj[key] === "string") {
+            strings.push(obj[key])
+        } 
+        if (typeof obj[key] === "object") {
+            strings = strings.concat(collectStrings(obj[key]))
+        }
+    }
+
+    return strings
+}
+
+const obj = {
+    stuff: "foo",
+    data: {
+        val: {
+            thing: {
+                info: "bar",
+                moreInfo: {
+                    evenMoreInfo: {
+                        weMadeIt: "baz"
+                    }
+                }
+            }
+        }
+    }
+}
+
+console.log(collectStrings(obj)) // ["foo", "bar", "baz"])
