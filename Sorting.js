@@ -29,12 +29,56 @@ function selectionSort(arr){
                 min = j
             }    
         }
-        [arr[i], arr[min]] = [arr[min], arr[i]]
+        if (i !== min) {
+            [arr[i], arr[min]] = [arr[min], arr[i]]
+        }
     }
 
     return arr 
 }
 
-console.log(selectionSort([38, 5, 2, 19, 3]))
-console.log(selectionSort([8,7,6,5,4]))
-console.log(selectionSort([]))
+// console.log(selectionSort([38, 5, 2, 19, 3]))
+// console.log(selectionSort([8,7,6,5,4]))
+// console.log(selectionSort([]))
+
+function insertionSort(arr){
+    for (let i = 1; i < arr.length; i++) {
+        let currentVal = arr[i]
+        for (let j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+            if (currentVal < arr[j]) {
+                [arr[j], arr[i]] = [arr[i], arr[j]]
+            }   
+        }
+    }
+    return arr 
+}
+
+// console.log(insertionSort([38, 5, 2, 19, 3]))
+// console.log(insertionSort([8,7,6,5,4]))
+// console.log(insertionSort([]))
+
+function mergeSort(arr1, arr2){
+    let results = []
+    let i = 0
+    let j = 0
+    while(i < arr1.length && j < arr2.length){
+        if(arr2[j] > arr1[i]){
+            results.push(arr1[i])
+            i++
+        } else {
+            results.push(arr2[j])
+            j++
+        }
+    }
+    while(i < arr1.length) {
+        results.push(arr1[i])
+        i++
+    }
+    while(j < arr2.length) {
+        results.push(arr2[j])
+        j++
+    }
+    return results
+}
+
+console.log(mergeSort([3, 6, 10, 10, 24], [2, 7, 18, 19, 24, 38]))
