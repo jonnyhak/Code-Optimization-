@@ -57,7 +57,17 @@ function insertionSort(arr){
 // console.log(insertionSort([8,7,6,5,4]))
 // console.log(insertionSort([]))
 
-function mergeSort(arr1, arr2){
+function mergeSort(arr) {
+    if (arr.length <= 1) return arr
+
+    let mid = Math.floor(arr.length / 2)
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
+
+    return merge(left, right)
+}
+
+function merge(arr1, arr2){
     let results = []
     let i = 0
     let j = 0
@@ -81,4 +91,4 @@ function mergeSort(arr1, arr2){
     return results
 }
 
-console.log(mergeSort([3, 6, 10, 10, 24], [2, 7, 18, 19, 24, 38]))
+console.log(mergeSort([5, 1, 8, 3, 9]))
