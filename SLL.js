@@ -13,6 +13,9 @@ class Student {
         this.tardies += 1
         return `${this.firstName} ${this.lastName} has been late ${this.tardies} times`
     }
+    static EnrollStudents(){
+        return "Enrolling Students"
+    }
 }
 
 let firstStudent = new Student("Jonny", "Hak", 9);
@@ -24,3 +27,4 @@ console.log(firstStudent.markLate())
 console.log(firstStudent.markLate())
 console.log(firstStudent.tardies)
 console.log(secondStudent.fullName())
+console.log(Student.EnrollStudents())
