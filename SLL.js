@@ -54,11 +54,25 @@ class SinglyLinkedList{
         this.length++;
         return this
     }
+    get(index){
+        if(index < 0 || index >= this.length) return null
+        let count = 0;
+        let current = this.head;
+        while(count !== index){
+            current = current.next;
+            count++
+        }
+        return current
+    }
 }
 
 let list = new SinglyLinkedList()
 list.push("HI")
 list.push("YOU")
+list.push("!")
 
-console.log(list)
+// console.log(list)
+console.log(list.get(1))
+
+
 
