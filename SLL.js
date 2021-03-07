@@ -64,6 +64,15 @@ class SinglyLinkedList{
         }
         return current
     }
+    set(index, val){
+        let foundNode = this.get(index);
+        if (foundNode){
+            foundNode.val = val;
+            return true  
+        }
+        return false
+    }
+
 }
 
 let list = new SinglyLinkedList()
@@ -72,7 +81,8 @@ list.push("YOU")
 list.push("!")
 
 // console.log(list)
-console.log(list.get(1))
+console.log(list.set(2, "!!!"))
+console.log(list.get(2))
 
 
 
