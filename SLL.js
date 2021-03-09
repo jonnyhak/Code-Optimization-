@@ -77,6 +77,11 @@ class SinglyLinkedList{
         if(index === this.length) return this.push(val);
         // if(index === 0) this.unshift  
     }
+    remove(index){
+        if (index < 0 || index >= this.length) return false;
+        if (index === 0) return this.shift()
+        if (index === this.length - 1) return this.pop()
+    }
 
 }
 
