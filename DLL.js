@@ -46,7 +46,13 @@ class DoublyLinkedList {
         if(this.length === 1){
             this.head = null;
             this.tail = null;
+        } else {
+            this.head = oldHead.next;
+            this.head.prev = null;
+            oldHead.next = null;
         }
+        this.length--;
+        return oldHead
     }
 
 }
@@ -58,7 +64,7 @@ list.push("Last Item")
 // list.pop()
 
 console.log(list)
-console.log(list.pop())
+console.log(list.shift())
 console.log(list)
 
 
