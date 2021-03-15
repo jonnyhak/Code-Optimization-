@@ -78,6 +78,14 @@ class DoublyLinkedList {
         }
         return current
     }
+    set (index, val){
+        let foundNode = this.get(index);
+        if(foundNode != null){
+            foundNode.val = val;
+            return true; 
+        }
+        return false
+    }
 
 }
 
@@ -88,7 +96,7 @@ list.push("Last Item")
 // list.pop()
 
 console.log(list)
-console.log(list.get(1))
+console.log(list.set(1, "Harry"))
 console.log(list)
 
 
