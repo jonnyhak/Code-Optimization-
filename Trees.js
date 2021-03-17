@@ -11,11 +11,19 @@
      constructor(){
          this.root = null;
      }
+     insert(value){
+         let newNode = new Node(value);
+         if(this.root === null){
+             this.root = newNode;
+             return this;
+         } else {
+             
+         }
+     }
+
  }
 
  let tree = new BinarySearchTree();
- tree.root = new Node (10);
- tree.root.right = new Node(15)
- tree.root.left = new Node(6)
+ tree.insert(10)
 
  console.log(tree)
