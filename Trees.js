@@ -76,6 +76,17 @@
         traverse(this.root)
         return data;
     }
+    DFSpostOrder(){
+        let data = [];
+        function traverse(node){
+            if (node.left) traverse(node.left);
+            if (node.right) traverse(node.right);
+            data.push(node.value)
+        }
+        traverse(this.root)
+        return data
+    }
+
 
  }
 
@@ -89,3 +100,4 @@
  
 
  console.log(tree.DFSpreOrder())
+ console.log(tree.DFSpostOrder())
