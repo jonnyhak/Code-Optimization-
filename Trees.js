@@ -96,6 +96,7 @@
         traverse(this.root)
         return data
     }
+    //implementations depends on use cases
 
 
  }
