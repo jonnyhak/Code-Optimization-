@@ -20,6 +20,13 @@ class MaxBinaryHeap {
             idx = parentIdx
         }
     }
+    extractMax(){
+        let max = this.values[0]
+        let end = this.values.pop()
+        this.values[0] = end
+        return max
+    }
+
 }
 
 let heap = new MaxBinaryHeap();
