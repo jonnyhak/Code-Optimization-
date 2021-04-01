@@ -24,7 +24,19 @@ class MaxBinaryHeap {
         let max = this.values[0]
         let end = this.values.pop()
         this.values[0] = end
+        //trickle down
+        this.sinkDown()
         return max
+    }
+    sinkDown(){
+        let idx = 0;
+        const length = this.values.length;
+        const element = this.values[0];
+        while(true){
+            let leftChildIdx = 2 * idx + 1;
+            let rightChildIdx = 2 * idx + 2;
+            let leftChild, rightChild;
+        }
     }
 
 }
