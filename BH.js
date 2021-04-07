@@ -23,9 +23,10 @@ class MaxBinaryHeap {
     extractMax(){
         let max = this.values[0]
         let end = this.values.pop()
-        this.values[0] = end
-        //trickle down
-        this.sinkDown()
+        if(this.values.length > 0){
+            this.values[0] = end;
+            this.sinkDown();
+        }
         return max
     }
     sinkDown(){
@@ -50,8 +51,10 @@ class MaxBinaryHeap {
                     swap = rightChildIdx
                 }
             }
-
             if (swap === null) break;
+            this.values[idx] = this.values[swap];
+            this.values[swap] = element
+            idx = swap
         }
     }
 
@@ -60,4 +63,4 @@ class MaxBinaryHeap {
 let heap = new MaxBinaryHeap();
 heap.insert(55)
 heap.insert(1)
-console.log(heap)
+console.log(heap.values)
