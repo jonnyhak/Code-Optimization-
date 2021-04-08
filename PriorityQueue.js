@@ -3,8 +3,9 @@ class PriorityQueue {
     constructor(){
         this.values =[]
     }
-    insert(element){
-        this.values.push(element);
+    insert(val, priority){
+        let newNode = new Node(val, priority)
+        this.values.push(newNode);
         this.bubbleUp();
     }
     bubbleUp(){
@@ -60,7 +61,8 @@ class PriorityQueue {
 }
 
 class Node {
-    constructor(val){
-        
+    constructor(val, priority){
+        this.val = val;
+        this.priority = priority
     }
 }
