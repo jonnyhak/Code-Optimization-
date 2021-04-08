@@ -66,3 +66,10 @@ class Node {
         this.priority = priority
     }
 }
+
+let ER = new PriorityQueue();
+ER.enqueue("common cold", 1)
+ER.enqueue("gunshot wound", 5)
+ER.enqueue("high fever", 2)
+
+console.log(ER)
